@@ -24,3 +24,27 @@ https://minikube.sigs.k8s.io/docs/handbook/kubectl/
 
 
 * Tthe Auto Scaling and Auto Healing capability is enabled in Deployment (wrapper)
+
+* **Best practice**: In production, avoid :latest. Pin a specific NGINX version (e.g. nginx:1.28 or nginx:1.28.0-alpine) so rollouts are predictable and you control when upgrades happen.
+
+* A .yaml file must have these 4 components:
+    * apiVersion
+    * kind
+    * metadata
+    * spec
+
+* Kubectl syntax
+    * 1. kubectl create -f <.yml file>
+    * 2. kubectl get [pods, nodes, replicaset]
+    * 3. kubectl delete <replicaset> <myapp-replicaset>
+    * 4. kubectl replace -f replicaset-definition.yml 
+    * 5. kubectl scale -replicas=6 -f replicaset-definition.yml
+    
+* To check the IP address Kubernetes nodes are running on:
+    **kubectl get nodes -o wide** 
+
+    **Note**:
+    * In case you use minikube on MacOS:
+        **minikube service web-service** (the app name)
+        * This works for NodePort service type. 
+        ![alt text](image.png)
