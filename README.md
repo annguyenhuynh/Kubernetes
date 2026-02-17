@@ -48,3 +48,6 @@ https://minikube.sigs.k8s.io/docs/handbook/kubectl/
         **minikube service web-service** (the app name)
         * This works for NodePort service type. 
         ![alt text](image.png)
+
+* The voting app mini project was inspired by KodeKloud: https://github.com/dockersamples/example-voting-app
+
